@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 
 namespace Admin\Controller;
+use User\Uti\PostImage;
 
 /**
  * 后台频道控制器
@@ -65,6 +66,29 @@ class ChannelController extends AdminController {
             $this->meta_title = '新增导航';
             $this->display('edit');
         }
+    }
+
+    private function getMillisecond()
+    {
+        //获取毫秒的时间戳
+        $time = explode ( " ", microtime () );
+        $time = $time[1] . ($time[0] * 1000);
+        $time2 = explode( ".", $time );
+        $time = $time2[0];
+        return $time;
+    }
+
+    /**
+     * 保存上次图片
+     */
+    public function coverImage()
+    {
+        require_once  APP_PATH . 'User/Util/PostImage.php';
+        $savePath = APP_PATH . 'Upload/';
+        $filename = $this->getMillisecond() . '.' . PostImage::getExt();
+        PostImage::save( $savePath . $filename);
+        echo json_encode(array('status'=>true,'path'=>'/wwwroot/Application/Upload/' . $filename));
+        exit;
     }
 
     /**

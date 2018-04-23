@@ -19,8 +19,8 @@
 						<input class="checkbox check-all" type="checkbox">
 					</th>
 					<th>ID</th>
-					<th>导航名称</th>
-					<th>导航地址</th>
+					<th>封面图片</th>
+					<th>链接地址</th>
                     <th>排序</th>
 					<th>操作</th>
 				</tr>
@@ -31,7 +31,7 @@
 					<tr>
 						<td><input class="ids row-selected" type="checkbox" name="" id="" value="{$channel['id']}"> </td>
 						<td>{$channel.id}</td>
-						<td><a href="{:U('index?pid='.$channel['id'])}">{$channel.title}</a></td>
+						<td><a href="javascript:void(0)">{$channel.cover_image}</a></td>
 						<td>{$channel.url}</td>
                         <td>{$channel.sort}</td>
 						<td>
