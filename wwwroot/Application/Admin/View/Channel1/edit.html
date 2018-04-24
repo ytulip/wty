@@ -16,9 +16,24 @@
 			<div class="controls">
 				<img id="up-face-img" src="{$info.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}" style="width: 400px;height: 158px;"/>
 				<input type="hidden" name="cover_image" value="{$info.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}"/>
-				<input type="hidden" name="title" value="wty"/>
 			</div>
 		</div>
+
+		<div class="form-item">
+			<label class="item-label">标题</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 240px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
 		<div class="form-item">
 			<label class="item-label">导航连接<span class="check-tips">（用于调转的URL，支持带http://的URL或U函数参数格式）</span></label>
 			<div class="controls">
