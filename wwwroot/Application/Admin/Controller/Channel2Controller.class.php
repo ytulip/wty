@@ -22,6 +22,16 @@ class Channel2Controller extends AdminController {
      * @author 麦当苗儿 <zuojiazi@vip.qq.com>
      */
     public function index(){
+
+        if(IS_POST)
+        {
+            $id = I('id',0);
+            $res = M('Channel2')->where(array('id'=>$id))->setField('content',I('content'));
+            $res = M('Channel2')->where(array('id'=>$id))->setField('title',I('title'));
+            echo json_encode(['status'=>1]);
+            exit;
+        }
+
         $pid = I('get.pid', 0);
         /* 获取频道列表 */
         $map  = array('status' => array('gt', -1), 'pid'=>$pid);
@@ -30,6 +40,23 @@ class Channel2Controller extends AdminController {
         $this->assign('list', $list);
         $this->assign('pid', $pid);
         $this->meta_title = '导航管理';
+
+        $info1 = M('Channel2')->find(1);
+        $info2 = M('Channel2')->find(2);
+        $info3 = M('Channel2')->find(3);
+        $info4 = M('Channel2')->find(4);
+        $info5 = M('Channel2')->find(5);
+        $info6 = M('Channel2')->find(6);
+        $info7 = M('Channel2')->find(7);
+
+        $this->assign('info1', $info1);
+        $this->assign('info2', $info2);
+        $this->assign('info3', $info3);
+        $this->assign('info4', $info4);
+        $this->assign('info5', $info5);
+        $this->assign('info6', $info6);
+        $this->assign('info7', $info7);
+
         $this->display();
     }
 
