@@ -230,14 +230,9 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                             <img src="'.$val->cover_image.'" class="img-responsive" alt="PhotoCall">
                         </div>
                         <div class="banner_bottom_left">
-                            <h4>Wedding Photography</h4>
+                            <h4>'.$val->title.'</h4>
 
-                            <p>Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque
-                                convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar
-                                neque pharetra ac.</p>
-                            <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-                                pulvinar neque pharetra ac.</p>
-
+                            <p>'.$val->content.'</p>
                         </div>
                     </li>';
                         }
