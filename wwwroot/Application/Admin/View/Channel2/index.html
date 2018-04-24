@@ -1,0 +1,208 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>
+			服务设置
+		</h2>
+	</div>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题1</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容1</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 70px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题2</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容2</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 70px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题3</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容3</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 70px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题4</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容4</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 70px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+	<div class="main-title">
+		<h2>
+			联系方式设置
+		</h2>
+	</div>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题（电话）</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">内容</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题(邮箱)</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">内容</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">标题（地址）</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">内容</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+</block>
+<block name="script">
+	<script type="text/javascript" charset="utf-8">
+        //导航高亮
+        highlight_subnav('{:U('index')}');
+	</script>
+	<script>
+        /**
+         * 上传图片
+         */
+        $('body').on('change','input[name="face_img"]',function(){
+            if(this.value){
+                var formData = new FormData($("#data-form")[0]);
+                $.ajax({
+                    url:'/wwwroot/admin.php?s=/Channel/coverImage',
+                    data:formData,
+                    type:'post',
+                    contentType: false,
+                    processData: false,
+                    dataType:'json',
+                    success:function(data){
+                        if(data.status){
+							/*
+							 * 把input换掉
+							 **/
+                            $('input[name="face_img"]').replaceWith('<input type="file" name="face_img"/>');
+                            //data.path
+                            $('#up-face-img').attr('src',data.path);
+                            $('input[name="cover_image"]').val(data.path);
+                        }
+                    }
+                });
+            }
+        });
+
+        $('body').on('click','#up-face-img',function(){
+            $('input[name="face_img"]').trigger('click');
+        });
+	</script>
+</block>

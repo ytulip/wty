@@ -1,0 +1,108 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>
+			{$info['id']?'编辑':'新增'}导航
+			<notempty name="pid">
+				[&nbsp;父导航：<a href="{:U('index','pid='.$pid)}">{$parent.title}</a>&nbsp;]
+			</notempty>
+		</h2>
+	</div>
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<input type="hidden" name="pid" value="{$pid}">
+		<div class="form-item">
+			<label class="item-label">上传banner图<span class="check-tips">（请注意尺寸的一致性）</span></label>
+			<div class="controls">
+				<img id="up-face-img" src="{$info.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}" style="width: 400px;height: 158px;"/>
+				<input type="hidden" name="cover_image" value="{$info.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}"/>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<label class="item-label">标题</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">文本内容</label>
+			<div class="controls">
+				<textarea class="textarea" style="width: 390px;height: 240px;" name="content">{$info.content|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<label class="item-label">导航连接<span class="check-tips">（用于调转的URL，支持带http://的URL或U函数参数格式）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="url" value="{$info.url|default=''}">
+			</div>
+		</div>
+        <div class="form-item">
+            <label class="item-label">新窗口打开<span class="check-tips">（是否新窗口打开链接）</span></label>
+            <div class="controls">
+                <select name="target">
+				<option value="0" <eq name="info.target" value="0" >selected</eq>>否</option>
+				<option value="1" <eq name="info.target" value="1" >selected</eq>>是</option>
+                </select>
+            </div>
+        </div>
+		<div class="form-item">
+			<label class="item-label">优先级<span class="check-tips">（导航显示顺序）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-small" name="sort" value="{$info.sort|default='0'}">
+			</div>
+		</div>
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+	</form>
+
+	<form style="display: none;" id="data-form">
+		<input type="hidden" value="1" name="type" id="img-type"/>
+		<input type="file" name="face_img"/>
+	</form>
+</block>
+<block name="script">
+<script type="text/javascript" charset="utf-8">
+	//导航高亮
+	highlight_subnav('{:U('index')}');
+</script>
+<script>
+	/**
+	 * 上传图片
+	 */
+	$('body').on('change','input[name="face_img"]',function(){
+		if(this.value){
+			var formData = new FormData($("#data-form")[0]);
+			$.ajax({
+				url:'/wwwroot/admin.php?s=/Channel/coverImage',
+				data:formData,
+				type:'post',
+				contentType: false,
+				processData: false,
+				dataType:'json',
+				success:function(data){
+                    if(data.status){
+                        /*
+                         * 把input换掉
+                         **/
+                        $('input[name="face_img"]').replaceWith('<input type="file" name="face_img"/>');
+                        //data.path
+						$('#up-face-img').attr('src',data.path);
+						$('input[name="cover_image"]').val(data.path);
+                    }
+				}
+			});
+		}
+	});
+
+    $('body').on('click','#up-face-img',function(){
+        $('input[name="face_img"]').trigger('click');
+    });
+</script>
+</block>
