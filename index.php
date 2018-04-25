@@ -2,8 +2,8 @@
 require_once  "core/PdoMysql.php";
 require_once  "core/DB.php";
 
-$bannerList = DB::select('select * from onethink_channel');
-$bannerList1 = DB::select('select * from onethink_channel1');
+$bannerList = DB::select('select * from onethink_channel order by sort asc,id asc');
+$bannerList1 = DB::select('select * from onethink_channel1 order by sort asc,id asc');
 $infoArray = DB::select('select * from onethink_channel2');
 
 
@@ -125,7 +125,9 @@ $infoArray = DB::select('select * from onethink_channel2');
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <h1> <a class="navbar-brand" href="index.html"><i class="fas fa-camera" aria-hidden="true"></i> Photocall <span class="desc">4 Digital Shots</span></a></h1>
+<!--                    <h1> <a class="navbar-brand" href="index.html"><i class="fas fa-camera" aria-hidden="true"></i> Photocall <span class="desc">4 Digital Shots</span></a></h1>-->
+
+                    <h1> <a class="navbar-brand" href="<?php echo $infoArray[7]->url;?>"  <?php echo $infoArray[7]->target?'target="_blank"':'' ?> ><img src="<?php echo $infoArray[7]->cover_image;?>" style="width: 171px;height: 50px;"/></a></h1>
                 </div>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -167,7 +169,7 @@ $infoArray = DB::select('select * from onethink_channel2');
             <?php
                 foreach ($bannerList as $key=>$val)
                 {
-                    echo ' <div class="item '.($key == 0?'active':('item' . ($key + 1))).'">
+                    echo ' <div onclick="goHerf(\''.$val->url.'\','.$val->target.')" class="item '.($key == 0?'active':('item' . ($key + 1))).'">
                 <div class="container">
                     <div class="carousel-caption">
                       
@@ -246,7 +248,7 @@ $infoArray = DB::select('select * from onethink_channel2');
                     <?php
                         foreach($bannerList1 as $key=>$val)
                         {
-                            echo ' <li>
+                            echo ' <li onclick="goHerf(\''.$val->url.'\','.$val->target.')">
                         <div class="respon_info_img">
                             <img src="'.$val->cover_image.'" class="img-responsive" alt="PhotoCall">
                         </div>
@@ -679,6 +681,18 @@ $infoArray = DB::select('select * from onethink_channel2');
             });
 
         });
+    </script>
+
+    <script>
+        function goHerf(url,target)
+        {
+            if(target)
+            {
+                window.open(url);
+            } else {
+                location.href = url;
+            }
+        }
     </script>
 
 
