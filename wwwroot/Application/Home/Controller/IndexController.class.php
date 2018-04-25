@@ -36,8 +36,23 @@ class IndexController extends HomeController {
      */
     public function saveMessage()
     {
-        echo 123;
-        exit;
+        $Channel = M('Msg');
+        $fillData = [];
+        $fillData['name'] = I('Name');
+        $fillData['email'] = I('Email');
+        $fillData['telephone'] = I('Telephone');
+        $fillData['subject'] = I('Subject');
+        $fillData['message'] =I('Message');
+        $fillData['created_at'] =date('Y-m-d H:i:s');
+        $fillData['updated_at'] =date('Y-m-d H:i:s');
+        if( $Channel->add($fillData) )
+        {
+            echo json_encode(['status'=>1]);
+            exit;
+        } else {
+            echo json_encode(['status'=>0]);
+            exit;
+        }
     }
 
 }
