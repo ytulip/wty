@@ -30,4 +30,14 @@ class IndexController extends HomeController {
         $this->display();
     }
 
+
+    /**
+     * 保存信息
+     */
+    public function saveMessage()
+    {
+        echo 123;
+        exit;
+    }
+
 }

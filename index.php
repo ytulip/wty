@@ -4,6 +4,7 @@ require_once  "core/DB.php";
 
 $bannerList = DB::select('select * from onethink_channel');
 $bannerList1 = DB::select('select * from onethink_channel1');
+$infoArray = DB::select('select * from onethink_channel2');
 
 
 ?>
@@ -87,6 +88,26 @@ $bannerList1 = DB::select('select * from onethink_channel1');
             /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;*/
             /*background-size: cover;*/
         /*}*/
+
+
+#send_btn {
+    outline: none;
+    padding: 23px 0;
+    font-size: 14px;
+    color: #fff;
+    background: #344754;
+    width: 49.75%;
+    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+    font-weight: 700;
+    background-color: #ff3c41;
+}
     </style>
 </head>
 
@@ -317,8 +338,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                 </div>
                             </div>
                         </div>
-                        <h3>Unique Design</h3>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h3><?php echo $infoArray[0]->title; ?></h3>
+                        <p><?php echo $infoArray[0]->content; ?></p>
                     </div>
                     <div class="col-md-3 ser-first-grid text-center">
                         <div class="dodecagon">
@@ -328,8 +349,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                 </div>
                             </div>
                         </div>
-                        <h3>Different Layout</h3>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h3><?php echo $infoArray[1]->title; ?></h3>
+                        <p><?php echo $infoArray[1]->title; ?></p>
                     </div>
                     <div class="col-md-3 ser-first-grid text-center">
                         <div class="dodecagon">
@@ -339,8 +360,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                 </div>
                             </div>
                         </div>
-                        <h3>Portfolio Styles</h3>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h3><?php echo $infoArray[2]->title; ?></h3>
+                        <p><?php echo $infoArray[2]->title; ?></p>
                     </div>
                     <div class="col-md-3 ser-first-grid text-center">
                         <div class="dodecagon">
@@ -350,8 +371,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                 </div>
                             </div>
                         </div>
-                        <h3>User Experience</h3>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <h3><?php echo $infoArray[3]->title; ?></h3>
+                        <p><?php echo $infoArray[3]->title; ?></p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -426,8 +447,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                             </div>
                                         </div>
                                         <div class="address-right">
-                                            <h6>Phone Number</h6>
-                                            <p>+1 234 567 8901,+1 234 567 8901</p>
+                                            <h6><?php echo $infoArray[4]->title; ?></h6>
+                                            <p><?php echo $infoArray[4]->content; ?></p>
 
                                         </div>
                                         <div class="clearfix"> </div>
@@ -443,8 +464,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                             </div>
                                         </div>
                                         <div class="address-right">
-                                            <h6>Email Address</h6>
-                                            <p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+                                            <h6><?php echo $infoArray[5]->title; ?></h6>
+                                            <p><?php echo $infoArray[5]->content; ?></p>
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -459,10 +480,8 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                             </div>
                                         </div>
                                         <div class="address-right">
-                                            <h6>Location</h6>
-                                            <p>Broome St, NY 10002,California, USA.
-
-                                            </p>
+                                            <h6><?php echo $infoArray[6]->title; ?></h6>
+                                            <p><?php echo $infoArray[6]->content; ?></p>
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -484,7 +503,7 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                                             <input type="text" name="Telephone" placeholder="Telephone" required="">
                                             <input type="text" name="Subject" placeholder="Subject" required="">
                                             <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-                                            <input type="submit" value="Submit">
+                                            <button id="send_btn" type="button" style="text-align: center;">Submit</button>
                                             <input type="reset" value="Clear">
                                             <div class="clearfix"> </div>
                                         </div>
@@ -534,6 +553,21 @@ $bannerList1 = DB::select('select * from onethink_channel1');
                 }
             });
 
+        });
+
+        $('#send_btn').click(function(){
+//            alert('123');
+            $.ajax(
+                {
+                    url:'/wwwroot/Home/Index/saveMessage',
+                    data:{Name:$('input[name="Name"]').val(),Email:$().val(),Telephone:$().val(),Subject:$().val(),Message:$().val()},
+                    success:function(data)
+                    {
+
+                    }
+
+                }
+            );
         });
     </script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
