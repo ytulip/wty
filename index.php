@@ -391,27 +391,7 @@ $infoArray = DB::select('select * from onethink_channel2');
     <!--/price-->
     <!--//price-->
     <!-- Modal1 -->
-    <div class="modal fade" id="myModal1" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header book-form">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Sign up Form</h4>
-                    <form action="#" method="post">
-                        <input type="text" name="Name" placeholder="Your Name" required="" />
-                        <input type="text" name="Email" class="email" placeholder="Email" required="" />
-                        <input type="password" name="Password" class="password" placeholder="Password" required="" />
-                        <div class="check-box">
-                            <input name="chekbox" type="checkbox" id="brand" value="">
-                            <label for="brand"><span></span>Remember Me.</label>
-                        </div>
-                        <input type="submit" value="Sign Up">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- //Modal1 -->
     <!--/testimonials-->
     <!--//testimonials-->
@@ -514,12 +494,8 @@ $infoArray = DB::select('select * from onethink_channel2');
                         <!--//tab_two-->
                         <div class="tab3">
 
-                            <div class="tab-info">
-                                <div class="contact-map-wthree-agileits">
+                            <div class="tab-info" style="width: 100%;height: 400px;" id="allmap">
 
-                                    <iframe src=""
-                                            class="map" style="border:0" allowfullscreen=""></iframe>
-                                </div>
 
                             </div>
                         </div>
@@ -535,6 +511,16 @@ $infoArray = DB::select('select * from onethink_channel2');
     <!-- //footer -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script src="js/responsiveslides.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=uD92DuzK9m4bBlMDQs4dsbHU"></script>
+    <script>
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(104.979002, 29.192906),6);  // 初始化地图,设置中心点坐标和地图级别
+        map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+        map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        </script>
     <script>
         // You can also use "$(window).load(function() {"
         $(function () {
@@ -557,13 +543,41 @@ $infoArray = DB::select('select * from onethink_channel2');
 
         $('#send_btn').click(function(){
 //            alert('123');
+            if(!$('input[name="Name"]').val()){
+                layer.msg('姓名不能为空');
+                return;
+            }
+            if(!$('input[name="Email"]').val()){
+                layer.msg('邮箱不能为空');
+                return;
+            }
+            if(!$('input[name="Telephone"]').val()){
+                layer.msg('电话不能为空');
+                return;
+            }
+            if(!$('input[name="Subject"]').val()){
+                layer.msg('主题不能为空');
+                return;
+            }
+            if(!$('textarea[name="Message"]').val()){
+                layer.msg('信息不能为空');
+                return;
+            }
+
+
+
             $.ajax(
                 {
                     url:'/wwwroot/Home/Index/saveMessage',
-                    data:{Name:$('input[name="Name"]').val(),Email:$().val(),Telephone:$().val(),Subject:$().val(),Message:$().val()},
+                    data:{Name:$('input[name="Name"]').val(),Email:$('input[name="Email"]').val(),Telephone:$('input[name="Telephone"]').val(),Subject:$('input[name="Subject"]').val(),Message:$('textarea[name="Message"]').val()},
+                    dataType:'json',
                     success:function(data)
                     {
-
+                        if(data.status){
+                            layer.msg('提交成功');
+                        } else {
+                            layer.msg('提交失败');
+                        }
                     }
 
                 }
