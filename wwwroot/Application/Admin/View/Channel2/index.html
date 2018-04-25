@@ -1,6 +1,43 @@
 <extend name="Public/base"/>
 
 <block name="body">
+
+	<div class="main-title">
+		<h2>
+			logo设置
+		</h2>
+	</div>
+
+	<form action="{:U()}" method="post" class="form-horizontal data-form">
+	<div class="form-item">
+		<label class="item-label">上传banner图<span class="check-tips">（请注意尺寸的一致性）</span></label>
+		<div class="controls">
+			<img id="up-face-img" src="{$info8.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}" style="width: 100px;height: 70px;"/>
+			<input type="hidden" name="cover_image" value="{$info.cover_image|default='/wwwroot/static/images/feed_pic_btn_bg.png'}"/>
+		</div>
+	</div>
+
+	<div class="form-item">
+		<label class="item-label">导航连接<span class="check-tips">（用于调转的URL，支持带http://的URL或U函数参数格式）</span></label>
+		<div class="controls">
+			<input type="text" class="text input-large" name="url" value="{$info8.url|default=''}">
+		</div>
+	</div>
+	<div class="form-item">
+		<label class="item-label">新窗口打开<span class="check-tips">（是否新窗口打开链接）</span></label>
+		<div class="controls">
+			<select name="target">
+				<option value="0" <eq name="info8.target" value="0" >selected</eq>>否</option>
+				<option value="1" <eq name="info8.target" value="1" >selected</eq>>是</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-item">
+		<input type="hidden" name="id" value="{$info8.id|default=''}">
+		<button class="btn submit-btn ajax-post form-btn" type="button" target-form="form-horizontal">确 定</button>
+	</div>
+	</form>
+
 	<div class="main-title">
 		<h2>
 			服务设置
@@ -164,6 +201,11 @@
 			<input type="hidden" name="id" value="{$info7.id|default=''}">
 			<button class="btn submit-btn ajax-post form-btn" type="button" target-form="form-horizontal">确 定</button>
 		</div>
+	</form>
+
+	<form style="display: none;" id="data-form">
+		<input type="hidden" value="1" name="type" id="img-type"/>
+		<input type="file" name="face_img"/>
 	</form>
 
 </block>

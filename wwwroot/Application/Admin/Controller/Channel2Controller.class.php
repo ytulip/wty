@@ -26,8 +26,16 @@ class Channel2Controller extends AdminController {
         if(IS_POST)
         {
             $id = I('id',0);
-            $res = M('Channel2')->where(array('id'=>$id))->setField('content',I('content'));
-            $res = M('Channel2')->where(array('id'=>$id))->setField('title',I('title'));
+
+            if( $id == 8)
+            {
+                $res = M('Channel2')->where(array('id'=>$id))->setField('cover_image',I('cover_image'));
+                $res = M('Channel2')->where(array('id'=>$id))->setField('url',I('url'));
+                $res = M('Channel2')->where(array('id'=>$id))->setField('target',I('target'));
+            } else {
+                $res = M('Channel2')->where(array('id'=>$id))->setField('content',I('content'));
+                $res = M('Channel2')->where(array('id'=>$id))->setField('title',I('title'));
+            }
             echo json_encode(['status'=>1]);
             exit;
         }
@@ -48,6 +56,7 @@ class Channel2Controller extends AdminController {
         $info5 = M('Channel2')->find(5);
         $info6 = M('Channel2')->find(6);
         $info7 = M('Channel2')->find(7);
+        $info8 = M('Channel2')->find(8);
 
         $this->assign('info1', $info1);
         $this->assign('info2', $info2);
@@ -56,6 +65,7 @@ class Channel2Controller extends AdminController {
         $this->assign('info5', $info5);
         $this->assign('info6', $info6);
         $this->assign('info7', $info7);
+        $this->assign('info8', $info8);
 
         $this->display();
     }
