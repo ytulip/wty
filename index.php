@@ -241,7 +241,7 @@ $infoArray = DB::select('select * from onethink_channel2');
 <!--/ab-->
 <div class="banner_bottom" id="about" style="padding-bottom: 0;">
     <div class="container">
-        <h3 class="tittle_w3ls">About Our Photocall</h3>
+        <h3 class="tittle_w3ls">About Us</h3>
         <div class="inner_sec_info_agile_w3_info">
             <div class="help_full">
                 <ul class="rslides" id="slider4">
@@ -352,7 +352,7 @@ $infoArray = DB::select('select * from onethink_channel2');
                             </div>
                         </div>
                         <h3><?php echo $infoArray[1]->title; ?></h3>
-                        <p><?php echo $infoArray[1]->title; ?></p>
+                        <p><?php echo $infoArray[1]->content; ?></p>
                     </div>
                     <div class="col-md-3 ser-first-grid text-center">
                         <div class="dodecagon">
@@ -363,7 +363,7 @@ $infoArray = DB::select('select * from onethink_channel2');
                             </div>
                         </div>
                         <h3><?php echo $infoArray[2]->title; ?></h3>
-                        <p><?php echo $infoArray[2]->title; ?></p>
+                        <p><?php echo $infoArray[2]->content; ?></p>
                     </div>
                     <div class="col-md-3 ser-first-grid text-center">
                         <div class="dodecagon">
@@ -374,7 +374,7 @@ $infoArray = DB::select('select * from onethink_channel2');
                             </div>
                         </div>
                         <h3><?php echo $infoArray[3]->title; ?></h3>
-                        <p><?php echo $infoArray[3]->title; ?></p>
+                        <p><?php echo $infoArray[3]->content; ?></p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
