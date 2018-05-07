@@ -242,88 +242,31 @@ $infoArray = DB::select('select * from onethink_channel2');
 <div class="banner_bottom" id="about" style="padding-bottom: 0;">
     <div class="container">
         <h3 class="tittle_w3ls">About Us</h3>
-        <div class="inner_sec_info_agile_w3_info">
-            <div class="help_full">
-                <ul class="rslides" id="slider4">
-                    <?php
-                        foreach($bannerList1 as $key=>$val)
-                        {
-                            echo ' <li onclick="goHerf(\''.$val->url.'\','.$val->target.')">
-                        <div class="respon_info_img">
-                            <img src="'.$val->cover_image.'" class="img-responsive" alt="PhotoCall">
+        <?php
+        foreach($bannerList1 as $key=>$val)
+        {
+            echo '
+                        <div style="width: 80%;text-align: center;margin: 0 auto;margin-bottom: 38px;">
+                        <div>
+                            <img style="width: 100%;" src="'.$val->cover_image.'" alt="PhotoCall">
                         </div>
-                        <div class="banner_bottom_left">
-                            <h4>'.$val->title.'</h4>
+                        
+                        <div class="">
+                            <h4 style="margin-top:38px;font-size: 1.5em;
+    color: #3c3c3c;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight: 600;
+    line-height: 1.6em;
+    margin-bottom: 1em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);">'.$val->title.'</h4>
 
                             <p>'.$val->content.'</p>
                         </div>
-                    </li>';
-                        }
-                    ?>
-<!--                    <li>-->
-<!--                        <div class="respon_info_img">-->
-<!--                            <img src="images/banner3.jpg" class="img-responsive" alt="PhotoCall">-->
-<!--                        </div>-->
-<!--                        <div class="banner_bottom_left">-->
-<!--                            <h4>Wedding Photography</h4>-->
-<!---->
-<!--                            <p>Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque-->
-<!--                                convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar-->
-<!--                                neque pharetra ac.</p>-->
-<!--                            <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget-->
-<!--                                pulvinar neque pharetra ac.</p>-->
-<!---->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="respon_info_img">-->
-<!--                            <img src="images/banner2.jpg" class="img-responsive" alt="PhotoCall">-->
-<!--                        </div>-->
-<!--                        <div class="banner_bottom_left">-->
-<!--                            <h4>Personal Photography</h4>-->
-<!---->
-<!--                            <p>Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque-->
-<!--                                convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar-->
-<!--                                neque pharetra ac.</p>-->
-<!--                            <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget-->
-<!--                                pulvinar neque pharetra ac.</p>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="respon_info_img">-->
-<!--                            <img src="images/banner1.jpg" class="img-responsive" alt="PhotoCall">-->
-<!--                        </div>-->
-<!--                        <div class="banner_bottom_left">-->
-<!--                            <h4>Film Photography</h4>-->
-<!--                            <p>Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque-->
-<!--                                convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar-->
-<!--                                neque pharetra ac.</p>-->
-<!--                            <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget-->
-<!--                                pulvinar neque pharetra ac.</p>-->
-<!---->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="respon_info_img">-->
-<!--                            <img src="images/banner4.jpg" class="img-responsive" alt="PhotoCall">-->
-<!--                        </div>-->
-<!--                        <div class="banner_bottom_left">-->
-<!--                            <h4>Nature Photography</h4>-->
-<!--                            <p>Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque-->
-<!--                                convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar-->
-<!--                                neque pharetra ac.</p>-->
-<!--                            <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget-->
-<!--                                pulvinar neque pharetra ac.</p>-->
-<!---->
-<!--                        </div>-->
-<!--                    </li>-->
-                </ul>
-
-
-
-
-            </div>
-        </div>
+                        </div>
+                 ';
+        }
+        ?>
     </div>
     <!--//ab-->
     <!--/what-->
