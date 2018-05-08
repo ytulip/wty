@@ -128,7 +128,7 @@ $infoArray = DB::select('select * from onethink_channel2');
                 <div class="logo">
 <!--                    <h1> <a class="navbar-brand" href="index.html"><i class="fas fa-camera" aria-hidden="true"></i> Photocall <span class="desc">4 Digital Shots</span></a></h1>-->
 
-                    <h1 style="overflow: hidden;"> <a class="navbar-brand" href="<?php echo $infoArray[7]->url;?>"  <?php echo $infoArray[7]->target?'target="_blank"':'' ?> ><img src="<?php echo $infoArray[7]->cover_image;?>" style="width: 210px;height: 65px;"/></a></h1>
+                    <h1 style="overflow: hidden;"> <a class="navbar-brand" href="<?php echo $infoArray[7]->url;?>"  <?php echo $infoArray[7]->target?'target="_blank"':'' ?> ><img src="<?php echo $infoArray[7]->cover_image;?>" style="width: 210px;height: 50px;"/></a></h1>
                 </div>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
