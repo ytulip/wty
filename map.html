@@ -3,8 +3,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title></title>
+<style>
+
+	.map-wrapper{ float:right;width:70%;}
+	.address-wrapper{float:right;width:30%;padding:20px;box-sizing: border-box;}
+
+	 @media only screen and (max-width: 540px) {
+           .map-wrapper{ width:100%;}
+		   .address-wrapper{width:100%;padding:0;}
+     }
+	 body{
+		font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+		color:#777;
+	}
+</style>
 <body>
-<div id="allmap" style="width: 100%;height: 320px;"></div>
+<div>
+	<div class="address-wrapper">
+		<div>地址一：</div>
+		<div>涛勇在虎门大桥的桥下的第二个洞口哟，你们不要随便去搭地铺</div>
+	</div>
+	<div class="map-wrapper">
+		<div id="allmap" style="width: 100%;height: 320px;"></div>
+	</div>
+</div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=uD92DuzK9m4bBlMDQs4dsbHU"></script>
 <script>
     // 百度地图API功能

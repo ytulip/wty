@@ -364,9 +364,24 @@ $infoArray = DB::select('select * from onethink_channel2');
                             </div>
                         </div>
                         <!--//tab_two-->
-                        <div class="tab3">
+                        <style>
+                            #allmap{ display:inline-block;width:70%;}
+                            .address-wrapper{display: inline-block;width:30%;padding:0 20px;box-sizing: border-box;color:#ffffff;font-size: 16px;vertical-align: top;direction: ltr; }
+                            .tab3{font-size: 0;direction: rtl;}
+                            @media only screen and (max-width: 540px) {
+                                #allmap{ width:100%;}
+                                .address-wrapper{width:100%;padding:0;}
+                            }
 
-                            <div class="tab-info" style="width: 100%;height: 400px;" id="allmap">
+                            .tab3{font-size: 0;}
+
+                        </style>
+                        <div class="tab3" >
+
+                            <div class="address-wrapper">
+                                <p><?php echo $infoArray[8]->content;?></p>
+                            </div>
+                            <div class="tab-info" style="height: 400px;" id="allmap">
 
 
                             </div>
@@ -388,7 +403,7 @@ $infoArray = DB::select('select * from onethink_channel2');
     <script>
         // 百度地图API功能
         var map = new BMap.Map("allmap");    // 创建Map实例
-        map.centerAndZoom(new BMap.Point(104.979002, 29.192906),6);  // 初始化地图,设置中心点坐标和地图级别
+        map.centerAndZoom(new BMap.Point(113.27811,22.626245),6);  // 初始化地图,设置中心点坐标和地图级别
         map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
         map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
         map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
