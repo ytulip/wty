@@ -152,7 +152,7 @@ $infoArray = DB::select('select * from onethink_channel2');
 
 <!--banner new-->
 <div class="banner-top" style="margin-top: 114px;">
-    <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 3000,slideshow:true,  controlNav: true}" id="demo-slider-0">
+    <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 3000,slideshow:true,  controlNav: true;slideshowSpeed: 3000}" id="demo-slider-0">
         <ul class="am-slides">
             <?php
             foreach ($bannerList as $key=>$val)
