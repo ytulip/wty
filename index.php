@@ -36,6 +36,7 @@ $infoArray = DB::select('select * from onethink_channel2');
     <!-- //for bootstrap working -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+    <link href="css/amazeui.css" rel="stylesheet"/>
     <style>
 <?php
         foreach ($bannerList as $key=>$val)
@@ -148,95 +149,21 @@ $infoArray = DB::select('select * from onethink_channel2');
     </nav>
     <div class="clearfix"></div>
 </div>
-<!-- banner -->
-<div class="banner_top">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <?php
-              foreach ($bannerList as $key=>$val)
-              {
-                  echo '<li data-target="#myCarousel" data-slide-to="'.$key.'" class="'.($key == 0?'active':'').'"></li>';
-              }
-            ?>
-<!--            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-<!--            <li data-target="#myCarousel" data-slide-to="1" class=""></li>-->
-<!--            <li data-target="#myCarousel" data-slide-to="2" class=""></li>-->
-<!--            <li data-target="#myCarousel" data-slide-to="3" class=""></li>-->
-<!--            <li data-target="#myCarousel" data-slide-to="4" class=""></li>-->
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <?php
-                foreach ($bannerList as $key=>$val)
-                {
-                    echo ' <div onclick="goHerf(\''.$val->url.'\','.$val->target.')" class="item '.($key == 0?'active':('item' . ($key + 1))).'">
-                <div class="container">
-                    <div class="carousel-caption">
-                      
 
-                    </div>
-                </div>
-            </div>';
-                }
+<!--banner new-->
+<div class="banner-top" style="margin-top: 114px;">
+    <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 3000,slideshow:true,  controlNav: true}" id="demo-slider-0">
+        <ul class="am-slides">
+            <?php
+            foreach ($bannerList as $key=>$val)
+            {
+            echo '<li onclick="goHerf(\''.$val->url.'\','.$val->target.')" class="item '.($key == 0?'active':('item' . ($key + 1))).'"><img src="'.$val->cover_image.'"/></li>';
+            }
             ?>
-<!--            <div class="item active">-->
-<!--                <div class="container">-->
-<!--                    <div class="carousel-caption">-->
-<!--                        <h3>Photo Gallery</h3>-->
-<!--                        <p>Professional Photographer</p>-->
-<!---->
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="item item2">-->
-<!--                <div class="container">-->
-<!--                    <div class="carousel-caption">-->
-<!--                        <h3>Landscape Photography</h3>-->
-<!--                        <p>Your image is our focus</p>-->
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="item item3">-->
-<!--                <div class="container">-->
-<!--                    <div class="carousel-caption">-->
-<!--                        <h3>Wedding Photography</h3>-->
-<!--                        <p>Professional Photographer</p>-->
-<!---->
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="item item4">-->
-<!--                <div class="container">-->
-<!--                    <div class="carousel-caption">-->
-<!---->
-<!--                        <h3>Nature Photography</h3>-->
-<!--                        <p>Your image is our focus</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="item item5">-->
-<!--                <div class="container">-->
-<!--                    <div class="carousel-caption">-->
-<!--                        <h3>Landscape Photography</h3>-->
-<!--                        <p>Professional Photographers</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="fa fa-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="fa fa-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!-- The Modal -->
+        </ul>
     </div>
 </div>
+<!-- banner -->
 <!--//banner -->
 <!--/ab-->
 <div class="banner_bottom" id="about" style="padding-bottom: 0;">
@@ -598,6 +525,7 @@ $infoArray = DB::select('select * from onethink_channel2');
     <!-- Smooth-Scrolling-JavaScript -->
     <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript" src="js/move-top.js"></script>
+    <script src="js/amazeui.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $(".scroll, .navbar li a, .footer li a").click(function (event) {
