@@ -67,6 +67,8 @@ class Channel2Controller extends AdminController {
         $this->assign('info7', $info7);
         $this->assign('info8', $info8);
 
+        $this->assign('content',htmlspecialchars($info6['content']));
+
         $this->display();
     }
 
