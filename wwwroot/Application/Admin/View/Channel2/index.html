@@ -208,6 +208,26 @@
 		<input type="file" name="face_img"/>
 	</form>
 
+	<div class="main-title">
+		<h2>
+			公司地址设置
+		</h2>
+	</div>
+
+	<form action="{:U()}" method="post" class="form-horizontal data-form">
+		<div class="form-item">
+			<label class="item-label">地址（换行请使用&lt;br/&gt;标签）</label>
+			<div class="controls">
+				<textarea style="width: 390px;height: 70px;"  class="textarea" name="content" >{$content9|default=''}</textarea>
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post form-btn" type="button" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
 </block>
 <block name="script">
 	<script type="text/javascript" charset="utf-8">

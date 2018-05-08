@@ -57,6 +57,7 @@ class Channel2Controller extends AdminController {
         $info6 = M('Channel2')->find(6);
         $info7 = M('Channel2')->find(7);
         $info8 = M('Channel2')->find(8);
+        $info9 = M('Channel2')->find(9);
 
         $this->assign('info1', $info1);
         $this->assign('info2', $info2);
@@ -66,8 +67,10 @@ class Channel2Controller extends AdminController {
         $this->assign('info6', $info6);
         $this->assign('info7', $info7);
         $this->assign('info8', $info8);
+        $this->assign('info9', $info9);
 
         $this->assign('content',htmlspecialchars($info6['content']));
+        $this->assign('content9',htmlspecialchars($info9['content']));
 
         $this->display();
     }
