@@ -223,7 +223,36 @@
 		</div>
 
 		<div class="form-item">
-			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<input type="hidden" name="id" value="{$info9.id|default=''}">
+			<button class="btn submit-btn ajax-post form-btn" type="button" target-form="form-horizontal">确 定</button>
+		</div>
+	</form>
+
+
+	<div class="main-title">
+		<h2>
+			地图经纬度设置
+		</h2>
+	</div>
+
+	<form action="{:U()}" method="post" class="form-horizontal data-form">
+		<div class="form-item">
+			<label class="item-label">经度</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info10.title|default=''}">
+			</div>
+		</div>
+
+
+		<div class="form-item">
+			<label class="item-label">维度</label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="content" value="{$info10.content|default=''}">
+			</div>
+		</div>
+
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info10.id|default=''}">
 			<button class="btn submit-btn ajax-post form-btn" type="button" target-form="form-horizontal">确 定</button>
 		</div>
 	</form>
