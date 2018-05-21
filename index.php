@@ -134,7 +134,7 @@ $infoArray = DB::select('select * from onethink_channel2');
             <div id="navbar" class="navbar-collapse collapse">
                 <div class="nav_right_top_agile_w3ls">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="http://www.freeswimmingbaby.com/">Home</a></li>
                         <li><a class="scroll" href="#about">About</a></li>
                         <li><a href="#services" class="scroll">Services</a></li>
 
@@ -392,7 +392,7 @@ $infoArray = DB::select('select * from onethink_channel2');
             </div>
             <!--//tabs-->
             <div class="clearfix"> </div>
-            <p class="copy-right">Copyright &copy; 2018.中山市远信商贸有限公司 All rights reserved.<a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备17028412号-1</a></p>
+            <p class="copy-right">Copyright &copy; 2018.中山市远信商贸有限公司 All rights reserved.<a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备17028412号-2</a></p>
         </div>
     </div>
     <!-- //footer -->
