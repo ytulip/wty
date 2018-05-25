@@ -20,7 +20,7 @@ class PdoMysql
      */
     private function init(){
         $this->_test = 15;
-        $this->_pdo = new PDO("mysql:host=111.230.197.165;dbname=product;charset=utf8","root",'');
+        $this->_pdo = new PDO("mysql:host=111.230.197.165;dbname=product_cn;charset=utf8","root",'');
     }
 
 // 覆盖php魔术方法__clone()，防止克隆
