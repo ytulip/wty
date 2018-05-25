@@ -12,7 +12,7 @@ $infoArray = DB::select('select * from onethink_channel2');
 <html>
 
 <head>
-    <title>Home</title>
+    <title>kingpou</title>
 
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,46 +50,6 @@ $infoArray = DB::select('select * from onethink_channel2');
         }';
         }
         ?>
-        /*.carousel .item {*/
-            /*background: -webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;*/
-            /*background: -moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;*/
-            /*background: -ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;*/
-            /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;*/
-            /*background-size: cover;*/
-        /*}*/
-
-        /*.carousel .item.item2 {*/
-            /*background: -webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;*/
-            /*background: -moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;*/
-            /*background: -ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;*/
-            /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;*/
-            /*background-size: cover;*/
-        /*}*/
-
-        /*.carousel .item.item3 {*/
-            /*background: -webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;*/
-            /*background: -moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;*/
-            /*background: -ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;*/
-            /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;*/
-            /*background-size: cover;*/
-        /*}*/
-
-        /*.carousel .item.item4 {*/
-            /*background: -webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;*/
-            /*background: -moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;*/
-            /*background: -ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;*/
-            /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;*/
-            /*background-size: cover;*/
-        /*}*/
-
-        /*.carousel .item.item5 {*/
-            /*background: -webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;*/
-            /*background: -moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;*/
-            /*background: -ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;*/
-            /*background: linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;*/
-            /*background-size: cover;*/
-        /*}*/
-
 
 #send_btn {
     outline: none;
@@ -134,12 +94,12 @@ $infoArray = DB::select('select * from onethink_channel2');
             <div id="navbar" class="navbar-collapse collapse">
                 <div class="nav_right_top_agile_w3ls">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="http://www.freeswimmingbaby.com/">Home</a></li>
-                        <li><a class="scroll" href="#about">About</a></li>
-                        <li><a href="#services" class="scroll">Services</a></li>
+                        <li class="active"><a href="http://www.freeswimmingbaby.com/">首页</a></li>
+                        <li><a class="scroll" href="#about">关于我们</a></li>
+                        <li><a href="#services" class="scroll">服务</a></li>
 
 
-                        <li><a class="scroll" href="#contact">Contact</a></li>
+                        <li><a class="scroll" href="#contact">联系我们</a></li>
 
                     </ul>
                 </div>
@@ -168,7 +128,7 @@ $infoArray = DB::select('select * from onethink_channel2');
 <!--/ab-->
 <div class="banner_bottom" id="about" style="padding-bottom: 0;">
     <div class="container">
-        <h3 class="tittle_w3ls">About Us</h3>
+        <h3 class="tittle_w3ls">关于我们</h3>
         <?php
         foreach($bannerList1 as $key=>$val)
         {
@@ -199,7 +159,7 @@ $infoArray = DB::select('select * from onethink_channel2');
     <!--/what-->
     <div class="works" id="services">
         <div class="container">
-            <h3 class="tittle_w3ls cen">Why Choose Us</h3>
+            <h3 class="tittle_w3ls cen">更好服务</h3>
             <div class="inner_sec_info_agile_w3_info">
                 <div class="ser-first">
                     <div class="col-md-3 ser-first-grid text-center">
@@ -278,9 +238,9 @@ $infoArray = DB::select('select * from onethink_channel2');
             <div class="responsive_tabs">
                 <div id="horizontalTab">
                     <ul class="resp-tabs-list">
-                        <li>Contact Info</li>
-                        <li>Send Message</li>
-                        <li>View Map</li>
+                        <li>联系方式</li>
+                        <li>在线留言</li>
+                        <li>查看地址</li>
                     </ul>
                     <div class="resp-tabs-container">
                         <!--/tab_one-->
@@ -346,7 +306,7 @@ $infoArray = DB::select('select * from onethink_channel2');
 
                             <div class="tab-info">
                                 <div class="contact_grid_right">
-                                    <h6>Please fill this form to contact with us.</h6>
+                                    <h6>请填写您的联系方式，我们将尽快联系您</h6>
                                     <form action="#" method="post">
                                         <div class="contact_left_grid">
                                             <input type="text" name="Name" placeholder="Name" required="">
@@ -355,8 +315,8 @@ $infoArray = DB::select('select * from onethink_channel2');
                                             <input type="text" name="Telephone" placeholder="Telephone" required="">
                                             <input type="text" name="Subject" placeholder="Subject" required="">
                                             <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-                                            <button id="send_btn" type="button" style="text-align: center;">Submit</button>
-                                            <input type="reset" value="Clear">
+                                            <button id="send_btn" type="button" style="text-align: center;">提交</button>
+                                            <input type="reset" value="清空">
                                             <div class="clearfix"> </div>
                                         </div>
                                     </form>
