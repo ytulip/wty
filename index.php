@@ -352,7 +352,7 @@ $infoArray = DB::select('select * from onethink_channel2');
             </div>
             <!--//tabs-->
             <div class="clearfix"> </div>
-            <p class="copy-right">Copyright &copy; 2018.中山市远信商贸有限公司 All rights reserved.<a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备17028412号-2</a></p>
+            <p class="copy-right">Copyright &copy; 2018.中山市远信商贸有限公司 All rights reserved.<a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备17028412号-1</a></p>
         </div>
     </div>
     <!-- //footer -->
